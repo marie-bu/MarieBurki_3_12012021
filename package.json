@@ -1,0 +1,11 @@
+{
+  "name": "ohmyfood_marie_burki",
+  "version": "1.0.0",
+  "description": "p3 formation dev frontend openclassroom",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "sass --watch ./sass/main.scss:./style.css"
+  },
+  "author": "Marie Burki",
+  "license": "ISC"
+}

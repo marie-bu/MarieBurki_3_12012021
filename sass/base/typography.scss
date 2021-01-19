@@ -1,0 +1,56 @@
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif ;
+    color: $color-default ;
+    font-size: 0.9rem;
+    font-weight: 500 ;
+}
+
+*a {
+    text-decoration: none;
+    color : $color-default ;
+    &:visited {
+        color: $color-default;
+    }
+}
+
+.landingpage_title {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.landingpage_undertitle {
+    font-size: 1.2rem ;
+    font-weight: 300;
+}
+
+.resto {
+    &__new {
+        color : $color-popout ;
+    }
+    &__caption {
+        h4 {
+        font-weight: 700 ;
+        }
+        p {
+            font-weight: 300 ;
+        }
+    }
+}
+
+.menu {
+    h2 {
+    font-family: 'Shrikhand', Arial, Helvetica, sans-serif ;
+    font-size: 1.5rem;
+    }
+    h3 {
+    font-weight: 300;
+    text-transform: uppercase;
+    }
+    &__acc {
+        font-weight: 300 ;
+    }
+}
+
+button, footer {
+    color: $color-popout;
+}
