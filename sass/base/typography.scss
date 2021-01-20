@@ -13,6 +13,10 @@ body {
     }
 }
 
+*li {
+    list-style-type: none;
+}
+
 .landingpage_title {
     font-size: 1.4rem;
     font-weight: 700;
@@ -51,6 +55,11 @@ body {
     }
 }
 
-button, footer {
+button {
     color: $color-popout;
+}
+
+footer li, footer a {
+    color: $color-popout;
+    line-height: 1.5rem;
 }
