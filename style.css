@@ -3,16 +3,17 @@
 *, *::after, *::before {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   box-sizing: border-box;
 }
 
-body {
+html {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   color: #000;
-  font-size: 0.9rem;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -38,26 +39,39 @@ body {
   font-weight: 300;
 }
 
-.resto__new {
+.landing__search {
+  font-size: 1.1rem;
+  color: #353535;
+}
+
+.resto__grid__new {
   color: #fff;
 }
-.resto__caption h4 {
+.resto__grid__caption h4 {
+  font-size: 1.15rem;
   font-weight: 700;
 }
-.resto__caption p {
+.resto__grid__caption p {
   font-weight: 300;
 }
 
 .menu h2 {
   font-family: "Shrikhand", Arial, Helvetica, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
 }
 .menu h3 {
   font-weight: 300;
   text-transform: uppercase;
 }
+.menu__main {
+  font-size: 1.05rem;
+}
 .menu__acc {
+  font-size: 0.95rem;
   font-weight: 300;
+}
+.menu__price {
+  font-size: 0.95rem;
 }
 
 button {
@@ -69,13 +83,37 @@ footer li, footer a {
   line-height: 1.5rem;
 }
 
-button {
+.btn {
   display: inline-block;
-  min-width: 188px;
-  padding: 18px 22px;
+  height: 50px;
+  padding: 0 22px;
+  margin-bottom: 4rem;
   background: linear-gradient(175deg, #FF79DA, 60%, #9356DC);
   border: none;
   box-shadow: #cfcfcf 0px 5px 10px;
+  border-radius: 25px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+.btn--command {
+  padding: 0 50px;
+}
+.btn:hover::after {
+  opacity: 1;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 200ms;
+  background: linear-gradient(175deg, #ff83dd, 60%, #985ede);
+  box-shadow: silver 0px 7px 12px;
   border-radius: 25px;
 }
 
@@ -87,23 +125,229 @@ button {
   border: none;
 }
 
+.landing__fonctionnement ol {
+  counter-reset: numbered-list;
+}
+.landing__fonctionnement ol li {
+  position: relative;
+  z-index: 1;
+  background-color: whitesmoke;
+  box-shadow: #cfcfcf 0px 5px 10px;
+  padding: 2.2rem 0.5rem 1.9rem 2.3rem;
+  margin-bottom: 1.7rem;
+  margin-left: 0.75rem;
+  border-radius: 1.4rem;
+  counter-increment: numbered-list;
+}
+.landing__fonctionnement ol li i {
+  color: #353535;
+  font-size: 1.1rem;
+  padding-right: 1em;
+}
+.landing__fonctionnement ol li::before {
+  content: counter(numbered-list);
+  position: absolute;
+  top: 2rem;
+  left: -0.75rem;
+  display: inline-block;
+  background-color: #9356DC;
+  color: #fff;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.menu li {
+  position: relative;
+  background-color: #fff;
+  padding: 1rem 0.7rem;
+  border-radius: 0.9rem;
+  margin-bottom: 1rem;
+  box-shadow: #cfcfcf 0px 5px 10px;
+}
+.menu__main {
+  padding-bottom: 0.2rem;
+}
+.menu__price {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.6rem;
+}
+.menu__select {
+  display: none;
+}
+
+header {
+  background-image: url("images/logo/ohmyfood@2x.svg");
+  background-size: 165px 30px;
+  background-position: center 22px;
+  background-repeat: no-repeat;
+}
 header .btn-arrow i {
   font-size: 1.3rem;
   color: #353535;
 }
 
 .header_index {
+  position: relative;
+  z-index: 2;
+  height: 65px;
   box-shadow: #cfcfcf 0px 2px 3px;
 }
 
 footer {
   background-color: #353535;
-  padding: 50px 25px 35px 25px;
+  padding: 1.8rem 1.7rem;
   line-height: 1.5rem;
+}
+footer img {
+  height: 20px;
+  width: 100px;
+  filter: invert(100%) sepia(0%) saturate(5437%) hue-rotate(15deg) brightness(114%) contrast(108%);
 }
 footer i {
   font-size: 0.7rem;
   padding-right: 5px;
+}
+
+.landing__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: #ebebeb;
+}
+.landing__search__bloc {
+  display: flex;
+  width: 200px;
+}
+.landing__search__bloc input {
+  background: none;
+  border: none;
+}
+.landing__search__bloc i {
+  padding: 1.3rem;
+}
+
+.resto__grid li {
+  display: flex;
+  position: relative;
+  width: auto;
+  height: 250px;
+  border-radius: 0.9rem;
+  margin-bottom: 1.3rem;
+  box-shadow: #cfcfcf 0px 5px 10px;
+}
+.resto__grid img {
+  position: absolute;
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  border-radius: 0.9rem 0.9rem 0 0;
+}
+.resto__grid__new {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.7rem;
+  background-color: #99E2D0;
+  color: #1e6856;
+  text-align: center;
+  padding: 0.6em 1em;
+  border-radius: 0.2rem;
+}
+.resto__grid__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  padding: 1.1rem 1rem;
+  box-sizing: border-box;
+}
+.resto__grid__caption h4, .resto__grid__caption p {
+  line-height: 1.6rem;
+}
+.resto__grid__caption i {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.7rem;
+  font-size: 1.5rem;
+}
+
+.landing__explore {
+  align-items: center;
+  background-color: whitesmoke;
+  text-align: center;
+}
+.landing__explore h1 {
+  padding: 2em 17% 1em 17%;
+}
+.landing__explore h2 {
+  padding: 0 6% 2em 6%;
+}
+.landing__fonctionnement {
+  padding: 3.6rem 1.2rem 3rem 1.2rem;
+}
+.landing__fonctionnement h3 {
+  padding-bottom: 2.2rem;
+}
+.landing__fonctionnement .active {
+  display: none;
+}
+
+.resto {
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 4rem 1.2rem 3.1rem 1.2rem;
+}
+.resto h3 {
+  padding-bottom: 1.8rem;
+}
+
+.menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.menu img {
+  width: 100%;
+  height: 265px;
+  object-fit: cover;
+}
+.menu__grid {
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 2.4rem 0.85rem 1.9rem 1rem;
+  margin-top: -45px;
+  border-radius: 3rem 3rem 0 0;
+}
+.menu__grid__title {
+  position: relative;
+  margin-bottom: -1rem;
+  margin-left: 0.5rem;
+}
+.menu__grid__title i {
+  position: absolute;
+  top: 0.2rem;
+  right: 1.5rem;
+  font-size: 1.9rem;
+}
+.menu__grid h3 {
+  padding-bottom: 0.5em;
+  margin-top: 3rem;
+  margin-left: 0.5rem;
+}
+.menu__grid .part-border {
+  width: 40px;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  border-bottom: 3px #99E2D0 solid;
+}
+.menu__grid__button {
+  padding-top: 3.3rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

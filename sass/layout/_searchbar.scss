@@ -1,0 +1,18 @@
+.landing__search {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: lighten($color: $color-shadow, $amount: 11%);
+    &__bloc {
+        display: flex;
+        width : 200px ;
+        input {
+            background : none ;
+            border : none ;
+        }
+        i {
+            padding : 1.3rem ;
+        }
+    }   
+}

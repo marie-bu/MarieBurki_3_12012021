@@ -1,0 +1,42 @@
+.resto__grid {
+    li {
+        display: flex ;
+        position: relative;
+        width: auto ;
+        height : 250px ;
+        border-radius: 0.9rem;
+        margin-bottom: 1.3rem;
+        @include box-shadow ;
+    }
+    img {
+        position: absolute;
+        width: 100%;
+        height: 175px;
+        object-fit: cover;
+        border-radius: 0.9rem 0.9rem 0 0;
+    }
+    &__new {
+        position: absolute;
+        top : 0.9rem ; right : 0.7rem ;
+        background-color: $color-tertiary;
+        color : darken($color: $color-tertiary, $amount: 48%);
+        text-align : center ;
+        padding : 0.6em 1em ;
+        border-radius: 0.2rem;
+    }
+    &__caption {
+       position : absolute ;
+       bottom: 0; left : 0 ;
+       width: 100%; height: 75px;
+       padding : 1.1rem 1rem;
+       box-sizing: border-box;
+       h4, p {
+           line-height: 1.6rem;
+       }
+       i {
+           position : absolute ;
+           top : 1.6rem ; right : 1.7rem ;
+           font-size: 1.5rem;
+       }
+    }
+}

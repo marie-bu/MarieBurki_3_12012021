@@ -1,7 +1,11 @@
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
-$color-tertiaty: #99E2D0;
+$color-tertiary: #99E2D0;
 $color-default: #000;
 $color-popout: #fff;
 $color-darkgrey: #353535;
 $color-shadow: #cfcfcf;
+
+@mixin box-shadow {
+    box-shadow: $color-shadow 0px 5px 10px;
+}
