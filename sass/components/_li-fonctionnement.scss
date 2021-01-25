@@ -2,17 +2,42 @@
     counter-reset: numbered-list ;
         li {
             position: relative;
-            z-index: 1;
             background-color: lighten($color: $color-shadow, $amount: 15%);
             @include box-shadow ;
             padding : 2.2rem 0.5rem 1.9rem 2.3rem ;
             margin-bottom: 1.7rem ; margin-left : 0.75rem;
             border-radius: 1.4rem;
             counter-increment: numbered-list;
+            &:hover::after {
+                opacity: 0.05;
+            }
+            &:hover i {
+                opacity: 0;
+            }
+            &:hover span i {
+                opacity : 1;
+            }
+            &::after {
+                content : "" ;
+                position: absolute;
+                z-index: -1;
+                top : 0; bottom : 0; left: 0; right: 0;
+                z-index: 0;
+                border-radius: 1.4rem;
+                background-color : $color-primary;
+                opacity: 0;
+            }
         i {
             color: $color-darkgrey;
             font-size: 1.1rem;
             padding-right: 1em;
+        }
+        span i {
+            display : inline-block;
+            position: absolute ;
+            left : 32.5px;
+            color: $color-primary;
+            opacity: 0;
         }
         &::before {
             content : counter(numbered-list);

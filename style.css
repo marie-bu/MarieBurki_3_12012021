@@ -112,7 +112,7 @@ footer li, footer a {
   right: 0;
   opacity: 0;
   transition: opacity 200ms;
-  background: linear-gradient(175deg, #ff83dd, 60%, #985ede);
+  background: linear-gradient(175deg, #ff88de, 60%, #9b63df);
   box-shadow: silver 0px 7px 12px;
   border-radius: 25px;
 }
@@ -130,7 +130,6 @@ footer li, footer a {
 }
 .landing__fonctionnement ol li {
   position: relative;
-  z-index: 1;
   background-color: whitesmoke;
   box-shadow: #cfcfcf 0px 5px 10px;
   padding: 2.2rem 0.5rem 1.9rem 2.3rem;
@@ -139,10 +138,39 @@ footer li, footer a {
   border-radius: 1.4rem;
   counter-increment: numbered-list;
 }
+.landing__fonctionnement ol li:hover::after {
+  opacity: 0.05;
+}
+.landing__fonctionnement ol li:hover i {
+  opacity: 0;
+}
+.landing__fonctionnement ol li:hover span i {
+  opacity: 1;
+}
+.landing__fonctionnement ol li::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  border-radius: 1.4rem;
+  background-color: #9356DC;
+  opacity: 0;
+}
 .landing__fonctionnement ol li i {
   color: #353535;
   font-size: 1.1rem;
   padding-right: 1em;
+}
+.landing__fonctionnement ol li span i {
+  display: inline-block;
+  position: absolute;
+  left: 32.5px;
+  color: #9356DC;
+  opacity: 0;
 }
 .landing__fonctionnement ol li::before {
   content: counter(numbered-list);
@@ -269,11 +297,27 @@ footer i {
 .resto__grid__caption h4, .resto__grid__caption p {
   line-height: 1.6rem;
 }
-.resto__grid__caption i {
+.resto__grid__caption__heart i {
   position: absolute;
+  z-index: 1;
   top: 1.6rem;
   right: 1.7rem;
   font-size: 1.5rem;
+  transition: 100ms 200ms ease;
+}
+.resto__grid__caption__heart i:hover {
+  color: #6023a9;
+}
+.resto__grid__caption__heart i:hover + span i {
+  transform: scale(1);
+}
+.resto__grid__caption__heart span i {
+  position: absolute;
+  z-index: 0;
+  display: inline-block;
+  color: #ff93e1;
+  transform: scale(0);
+  transition: 300ms ease;
 }
 
 .landing__explore {

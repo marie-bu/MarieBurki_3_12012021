@@ -33,10 +33,28 @@
        h4, p {
            line-height: 1.6rem;
        }
-       i {
-           position : absolute ;
-           top : 1.6rem ; right : 1.7rem ;
-           font-size: 1.5rem;
-       }
+       &__heart {
+            i {
+                position : absolute ;
+                z-index: 1;
+                top : 1.6rem ; right : 1.7rem ;
+                font-size: 1.5rem;
+                transition: 100ms 200ms ease;
+                &:hover {
+                    color : darken($color-primary,20%) ;
+                }
+                &:hover + span i {
+                    transform: scale(1);
+                }
+            }
+            span i{
+                position: absolute;
+                z-index: 0;
+                display: inline-block;
+                color : lighten($color-secondary,5%) ;
+                transform: scale(0);
+                transition: 300ms ease;
+            }
+        }
     }
 }
