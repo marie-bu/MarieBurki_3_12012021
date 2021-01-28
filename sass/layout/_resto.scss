@@ -39,12 +39,13 @@
                 z-index: 1;
                 top : 1.6rem ; right : 1.7rem ;
                 font-size: 1.5rem;
-                transition: 100ms 200ms ease;
                 &:hover {
                     color : darken($color-primary,20%) ;
+                    animation: heart 350ms;
                 }
                 &:hover + span i {
                     transform: scale(1);
+                    opacity: 1;
                 }
             }
             span i{
@@ -52,8 +53,9 @@
                 z-index: 0;
                 display: inline-block;
                 color : lighten($color-secondary,5%) ;
+                opacity: 0;
                 transform: scale(0);
-                transition: 300ms ease;
+                transition: 300ms ease-in;
             }
         }
     }

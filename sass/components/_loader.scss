@@ -1,0 +1,30 @@
+.load {
+    position: relative ;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: load-end 10ms 3000ms both;
+    &__icon {
+        position: absolute;
+        z-index: 2;
+        width: 3.2em;
+        height: 3.2em;
+        border-radius: 3.2em;
+        text-align: center;
+        line-height: 3.2em;
+        background-color :$color-popout;
+        font-size: 2rem;
+        color:$color-darkgrey;
+        animation: load-end-icon 10ms 3000ms both;
+    }
+    &__gradient {
+        position: absolute;
+        z-index: 1;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 8rem;
+        background : linear-gradient( $color-secondary, $color-tertiary, $color-primary);
+        animation: load-gradient 2850ms normal 150ms both;
+    }
+}

@@ -59,14 +59,14 @@ html {
     font-weight: 300;
     text-transform: uppercase;
     }
-    &__main {
+    &__li__main {
         font-size: 1.05rem;
     }
-    &__acc {
+    &__li__acc {
         font-size: 0.95rem;
         font-weight: 300 ;
     }
-    &__price {
+    &__li__price {
         font-size: 0.95rem;
     }
 }
@@ -78,4 +78,9 @@ button {
 footer li, footer a {
     color: $color-popout;
     line-height: 1.5rem;
+}
+
+.loader {
+    font-size: 2em;
+    line-height: 2em;
 }
