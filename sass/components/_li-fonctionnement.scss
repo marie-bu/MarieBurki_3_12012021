@@ -1,5 +1,8 @@
 .landing__fonctionnement ol {
     counter-reset: numbered-list ;
+    @include tablet {
+        padding : 0 2rem ;
+    }
         li {
             position: relative;
             background-color: lighten($color: $color-shadow, $amount: 15%);

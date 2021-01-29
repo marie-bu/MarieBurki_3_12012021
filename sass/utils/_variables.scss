@@ -6,6 +6,4 @@ $color-popout: #fff;
 $color-darkgrey: #353535;
 $color-shadow: #cfcfcf;
 
-@mixin box-shadow {
-    box-shadow: $color-shadow 0px 5px 10px;
-}
+$breakpoints : (tablet:768px, screenXL:1025px) ;

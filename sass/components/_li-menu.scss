@@ -1,10 +1,12 @@
 .menu {
     &__li {
     position: relative;
+    overflow: hidden;
     background-color: $color-popout;
-    padding : 1rem 0.7rem;
+    padding : 1rem 4rem 1rem 0.7rem;
     border-radius: 0.9rem;
     margin-bottom: 1rem;
+    transition: $checkbox-dur*2 50ms;
     cursor: pointer;
     @include box-shadow ;
     animation : dish $dish-dur 150ms ease-in-out both;
@@ -13,13 +15,19 @@
                     animation-delay: $dish-dur * $i;
                 }
             }
-        &:hover > &__select {
-                animation: greenbox cubic-bezier(.94, .54, .24, .54) $checkbox-dur*2 50ms both;
-                transform-origin: right ;
+        &:hover {
+            padding-right: 8.3rem;
+        }
+        &:hover &__select {
+            animation: greenbox cubic-bezier(.94, .54, .24, .54) $checkbox-dur*2 50ms both;
+            transform-origin: right ;
         }
 
-        &:hover > &__select i {
-                animation : checkicon cubic-bezier(.94, .05, .14, .54) $checkbox-dur $checkbox-dur+30ms both ;
+        &:hover &__select i {
+            animation : checkicon cubic-bezier(.94, .05, .14, .54) $checkbox-dur $checkbox-dur+30ms both ;
+        }
+        &:hover &__price {
+            padding-right: 3.8rem;
         }
 
         &__main {
@@ -36,15 +44,16 @@
         &__price {
             position: absolute;
             bottom: 1rem; right: 1.6rem;
+            transition: $checkbox-dur*2 50ms ;
         }
         &__select {
             display : flex ;
             justify-content : center ;
             align-items: center;
             position: absolute;
-            bottom: 0; right: -1px;
+            bottom: -1px; right: -1px;
             width: 4.3rem;
-            height: 4.7rem;
+            height: 4.9rem;
             scale: 0;
             border-radius: 0 0.9rem 0.9rem 0;
             margin-left: 0.5rem;

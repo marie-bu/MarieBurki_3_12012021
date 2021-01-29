@@ -4,12 +4,28 @@
     align-items: center;
     height: 50px;
     background-color: lighten($color: $color-shadow, $amount: 11%);
+    @include tablet {
+        background-color: $color-popout;
+        margin-bottom: 35px;
+    }
     &__bloc {
         display: flex;
         width : 200px ;
+        @include tablet {
+            background-color: lighten($color: $color-shadow, $amount: 15%);
+            border: 1px $color-primary solid;
+            border-radius: 25px;
+        }
         input {
             background : none ;
             border : none ;
+            &::-webkit-search-decoration, &::-webkit-search-cancel-button, &::-webkit-search-results-button, &::-webkit-search-results-decoration {
+                display: none;
+            }
+            &:focus {
+                outline : none ;
+                -webkit-search-decoration : hidden ;
+            }
         }
         i {
             padding : 1.3rem ;

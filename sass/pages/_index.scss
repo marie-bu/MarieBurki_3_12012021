@@ -1,4 +1,16 @@
 .landing {
+    @include tablet {
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+    }
+    form {
+        @include tablet {
+            flex : 55%;
+            height: 440px;
+            padding-top: 50px;
+        }
+    }
     &__explore {
         align-items: center;
         background-color: lighten($color: $color-shadow, $amount: 15%);
@@ -9,14 +21,30 @@
         h2 {
             padding : 0 6% 2em 6% ;
         }
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 50%;
+            background-color: $color-popout;
+        }
     }
     &__fonctionnement {
         padding : 3.6rem 1.2rem 3rem /*4.7-margin bottom1.7li*/ 1.2rem ;
         h3 {
             padding-bottom: 2.2rem ;
+            @include tablet {
+                text-align: center;
+            }
         }
         .active {
             display: none;
+        }
+        @include tablet {
+            height: 440px;
+            flex : 45% ;
+            padding-top: 50px;
+            border-left: 3px lighten($color: $color-shadow, $amount: 15%) solid;
         }
     }
 }
@@ -27,5 +55,8 @@
     padding : 4rem 1.2rem 3.1rem 1.2rem ;
     h3 {
         padding-bottom: 1.8rem;
+    }
+    @include tablet {
+        background-color: $color-popout;
     }
 }
