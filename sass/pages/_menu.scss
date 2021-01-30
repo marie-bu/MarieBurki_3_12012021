@@ -26,11 +26,13 @@
             position: relative;
             margin-bottom : -1rem ;
             margin-left: 0.5rem;
+            padding-right: 3rem;
             i {
                 position: absolute;
                 z-index: 1;
                 top : 0.2rem ; right : 1.5rem ;
                 font-size: 1.9rem;
+                transition: 300ms ease-in-out;
                 @include desktop {
                     right : 3rem
                 }
@@ -38,7 +40,7 @@
                     opacity: 0;
                 }
                 &:hover + span i {
-                    scale: 1;
+                    transform : scale(1) ;
                     opacity: 1;
                     transform-origin: bottom;
                 }
@@ -49,10 +51,11 @@
                 display: inline-block;
                 background : linear-gradient(200deg, $color-primary 2%, $color-secondary);
                 -webkit-background-clip : text;
+                background-clip: text;
                 color: transparent;
-                scale: 0;
+                transform : scale(0);
                 opacity: 0;
-                transition: 250ms;
+                transition: 250ms 30ms ease-in-out;
                 
             }
         }
@@ -61,14 +64,22 @@
         @include tablet {
             display: grid;
             grid-template-columns: repeat(auto-fill, 31%);
-            gap: 2rem;
             justify-content: space-around;
             margin-top: 4.5rem; margin-bottom: 1.5rem;
         }
+        &__title {
+            margin : 3rem 1rem 1rem 0.5rem ;
+            @include tablet {
+                margin-top: 1rem;
+            }
+            .part-border {
+                padding-top : 0.4rem;
+                width : 40px ;
+                border-bottom: 3px $color-tertiary solid;
+            }
+        }
         &__section {
             @include tablet {
-                /*max-height: 345px;
-                overflow: auto;*/
                 display: flex ;
                 flex-direction: column;
                 justify-content: space-around;
@@ -98,20 +109,6 @@
                         }
                     }
                 }
-            }
-            .subtitle {
-                padding-bottom: 0.5em;
-                margin-top : 3rem ;
-                margin-left: 0.5rem;
-                @include tablet {
-                    margin-top: 1rem;
-                }
-            }
-            .part-border {
-                width : 40px ;
-                margin-bottom: 1rem;
-                margin-left: 0.5rem;
-                border-bottom: 3px $color-tertiary solid;
             }
         }
     }

@@ -48,11 +48,13 @@
                 z-index: 1;
                 top : 1.6rem ; right : 1.7rem ;
                 font-size: 1.5rem;
+                transition: 300ms ease-in-out;
                 &:hover {
                     opacity: 0;
                 }
                 &:hover + span i {
-                    animation : heart 250ms 30ms both ;
+                    transform:scale(1);
+                    opacity: 1;
                     transform-origin: bottom;
                 }
             }
@@ -62,9 +64,11 @@
                 display: inline-block;
                 background : linear-gradient(200deg, $color-primary 2%, $color-secondary);
                 -webkit-background-clip : text;
+                background-clip: text;
                 color: transparent;
-                scale: 0;
+                transform :scale(0);
                 opacity: 0;
+                transition: 250ms 30ms ease-in-out;
             }
         }
     }
