@@ -5,10 +5,10 @@
     margin-bottom: 4rem;
     background : linear-gradient(175deg, $color-secondary, 60%, $color-primary);
     border : none ;
-    box-shadow: $color-shadow 0px 5px 10px;
     border-radius: 25px;
     position: relative;
     z-index: 1;
+    @include box-shadow;
     cursor: pointer;
     &--command {
         padding : 0 50px ;

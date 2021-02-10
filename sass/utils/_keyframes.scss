@@ -1,3 +1,11 @@
+$animation-delay: 30ms;
+
+$heart-dur: 250ms;
+
+$load-dur: 2500ms;
+$load-end-dur: 10ms;
+$load-end-delay: $load-dur+$animation-delay;
+
 @keyframes load-gradient {
     0% {
         transform: rotate(0);
@@ -30,33 +38,9 @@
     }
 }
 
-@keyframes essai {
-    0% {
-        transform : translateX(-10rem);
-    }
-    100% {
-        transform : translateX(10rem);
-    }
-}
+$menu-appear-dur : 150ms ;
 
-
-@keyframes heart {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    60% {
-        opacity : 0.2
-    }
-    100% {
-        transform: scale(1);
-        opacity : 1;
-    }
-}
-
-$dish-dur : 150ms ;
-
-@keyframes dish {
+@keyframes menu-appear {
     0% {
         opacity: 0;
     }
@@ -68,15 +52,13 @@ $dish-dur : 150ms ;
     }
 }
 
-$checkbox-dur : 150ms ;
+$checkbox-dur : 180ms ;
 
 @keyframes checkicon {
     0% {
         transform : translate(2.15rem) rotate(-90deg);
-        /*rotate: (-90deg);*/
     }
     100% {
         transform: translate(0) rotate(0);
-        /*rotate: (0);*/
     }
 }

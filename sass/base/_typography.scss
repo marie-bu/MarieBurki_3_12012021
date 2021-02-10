@@ -20,6 +20,11 @@ html {
     list-style-type: none;
 }
 
+.loader {
+    font-size: 2em;
+    line-height: 2em;
+}
+
 .landingpage_title {
     font-size: 1.4rem;
     font-weight: 700;
@@ -36,9 +41,6 @@ html {
 }
 
 .resto__grid {
-    &__new {
-        color : $color-popout ;
-    }
     &__caption {
         h4 {
             font-size: 1.15rem;
@@ -79,9 +81,4 @@ button {
 footer li, footer a {
     color: $color-popout;
     line-height: 1.5rem;
-}
-
-.loader {
-    font-size: 2em;
-    line-height: 2em;
 }

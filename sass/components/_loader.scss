@@ -4,27 +4,27 @@
     display: flex ;
     justify-content: center;
     align-items: center;
-    animation: load-end 10ms 3000ms both;
+    animation: load-end $load-end-dur $load-end-delay both;
     &__icon {
-       position: absolute;
+        position: absolute;
         z-index: 2;
-        width: 3.2em;
-        height: 3.2em;
-        border-radius: 3.2em;
+        width: $load-icon-size;
+        height: $load-icon-size;
+        border-radius: $load-icon-size;
         text-align: center;
-        line-height: 3.2em;
+        line-height: $load-icon-size;
         font-size: 2rem;
         background-color: $color-popout;
         color:$color-darkgrey;
-        animation: load-end-icon 10ms 3000ms both;
+        animation: load-end-icon $load-end-dur $load-end-delay both;
     }
     &__gradient {
         position: absolute;
         z-index: 0;
-        width: 8rem;
-        height: 8rem;
-        border-radius: 8rem;
+        width: $load-size;
+        height: $load-size;
+        border-radius: $load-size;
         background : linear-gradient($color-secondary, $color-tertiary, $color-primary);
-        animation: load-gradient 2850ms normal 150ms both;
+        animation: load-gradient $load-dur $animation-delay normal both;
     }
 }

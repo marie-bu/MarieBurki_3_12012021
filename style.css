@@ -29,28 +29,7 @@
     opacity: 0;
   }
 }
-@keyframes essai {
-  0% {
-    transform: translateX(-10rem);
-  }
-  100% {
-    transform: translateX(10rem);
-  }
-}
-@keyframes heart {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  60% {
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-@keyframes dish {
+@keyframes menu-appear {
   0% {
     opacity: 0;
   }
@@ -64,11 +43,9 @@
 @keyframes checkicon {
   0% {
     transform: translate(2.15rem) rotate(-90deg);
-    /*rotate: (-90deg);*/
   }
   100% {
     transform: translate(0) rotate(0);
-    /*rotate: (0);*/
   }
 }
 *, *::after, *::before {
@@ -77,9 +54,6 @@
   box-sizing: border-box;
 }
 
-body {
-  box-sizing: border-box;
-}
 @media screen and (min-width: 768px) {
   body {
     max-width: 1150px;
@@ -106,6 +80,11 @@ html {
   list-style-type: none;
 }
 
+.loader {
+  font-size: 2em;
+  line-height: 2em;
+}
+
 .landingpage_title {
   font-size: 1.4rem;
   font-weight: 700;
@@ -121,9 +100,6 @@ html {
   color: #353535;
 }
 
-.resto__grid__new {
-  color: #fff;
-}
 .resto__grid__caption h4 {
   font-size: 1.15rem;
   font-weight: 700;
@@ -161,11 +137,6 @@ footer li, footer a {
   line-height: 1.5rem;
 }
 
-.loader {
-  font-size: 2em;
-  line-height: 2em;
-}
-
 .btn {
   display: inline-block;
   height: 50px;
@@ -173,10 +144,10 @@ footer li, footer a {
   margin-bottom: 4rem;
   background: linear-gradient(175deg, #FF79DA, 60%, #9356DC);
   border: none;
-  box-shadow: #cfcfcf 0px 5px 10px;
   border-radius: 25px;
   position: relative;
   z-index: 1;
+  box-shadow: #cfcfcf 0px 5px 10px;
   cursor: pointer;
 }
 .btn--command {
@@ -282,10 +253,10 @@ footer li, footer a {
   padding: 1rem 4rem 1rem 0.7rem;
   border-radius: 0.9rem;
   margin-bottom: 1rem;
-  transition: 300ms 50ms;
+  transition: 360ms 30ms;
   cursor: pointer;
   box-shadow: #cfcfcf 0px 5px 10px;
-  animation: dish 150ms 150ms ease-in-out both;
+  animation: menu-appear 150ms 30ms ease-in-out both;
 }
 .menu__li--1 {
   animation-delay: 150ms;
@@ -306,7 +277,7 @@ footer li, footer a {
   right: -1px;
 }
 .menu__li:hover .menu__li__select i {
-  animation: checkicon cubic-bezier(0.94, 0.05, 0.14, 0.54) 150ms 180ms both;
+  animation: checkicon cubic-bezier(0.94, 0.05, 0.14, 0.54) 180ms 210ms both;
 }
 .menu__li:hover .menu__li__price {
   padding-right: 3.8rem;
@@ -326,7 +297,7 @@ footer li, footer a {
   position: absolute;
   bottom: 1rem;
   right: 1.6rem;
-  transition: 300ms 50ms;
+  transition: 360ms 30ms;
 }
 .menu__li__select {
   display: flex;
@@ -340,7 +311,7 @@ footer li, footer a {
   border-radius: 0 0.9rem 0.9rem 0;
   margin-left: 0.5rem;
   background-color: #99E2D0;
-  transition: 300ms 30ms;
+  transition: 360ms 30ms;
 }
 .menu__li__select i {
   font-size: 0.8rem;
@@ -359,7 +330,7 @@ footer li, footer a {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: load-end 10ms 3000ms both;
+  animation: load-end 10ms 2530ms both;
 }
 .load__icon {
   position: absolute;
@@ -372,7 +343,7 @@ footer li, footer a {
   font-size: 2rem;
   background-color: #fff;
   color: #353535;
-  animation: load-end-icon 10ms 3000ms both;
+  animation: load-end-icon 10ms 2530ms both;
 }
 .load__gradient {
   position: absolute;
@@ -381,7 +352,7 @@ footer li, footer a {
   height: 8rem;
   border-radius: 8rem;
   background: linear-gradient(#FF79DA, #99E2D0, #9356DC);
-  animation: load-gradient 2850ms normal 150ms both;
+  animation: load-gradient 2500ms 30ms normal both;
 }
 
 header {
@@ -456,7 +427,6 @@ footer i {
 }
 .landing__search__bloc input:focus {
   outline: none;
-  -webkit-search-decoration: hidden;
 }
 .landing__search__bloc i {
   padding: 1.3rem;
@@ -519,7 +489,7 @@ footer i {
   top: 1.6rem;
   right: 1.7rem;
   font-size: 1.5rem;
-  transition: 300ms ease-in-out;
+  transition: 280ms ease-in-out;
 }
 .resto__grid__caption__heart i:hover {
   opacity: 0;
@@ -558,7 +528,7 @@ footer i {
 }
 .landing__explore {
   align-items: center;
-  background-color: whitesmoke;
+  background-color: #ebebeb;
   text-align: center;
 }
 .landing__explore h1 {
@@ -595,7 +565,7 @@ footer i {
     height: 440px;
     flex: 45%;
     padding-top: 50px;
-    border-left: 3px whitesmoke solid;
+    border-left: 3px #ebebeb solid;
   }
 }
 
@@ -648,7 +618,6 @@ footer i {
 }
 .menu__main__title {
   position: relative;
-  margin-bottom: -1rem;
   margin-left: 0.5rem;
   padding-right: 3rem;
 }
@@ -658,7 +627,7 @@ footer i {
   top: 0.2rem;
   right: 1.5rem;
   font-size: 1.9rem;
-  transition: 300ms ease-in-out;
+  transition: 280ms ease-in-out;
 }
 @media screen and (min-width: 1025px) {
   .menu__main__title i {
@@ -688,24 +657,29 @@ footer i {
 @media screen and (min-width: 768px) {
   .menu__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 31%);
+    grid-template-columns: repeat(auto-fill, 29%);
     justify-content: space-around;
-    margin-top: 4.5rem;
+    margin-top: 4rem;
     margin-bottom: 1.5rem;
   }
 }
-.menu__grid__title {
-  margin: 3rem 1rem 1rem 0.5rem;
+.menu__grid__section h3 {
+  position: relative;
+  margin: 2.5rem 1.5rem 1.5rem 0.5rem;
 }
 @media screen and (min-width: 768px) {
-  .menu__grid__title {
+  .menu__grid__section h3 {
     margin-top: 1rem;
   }
 }
-.menu__grid__title .part-border {
-  padding-top: 0.4rem;
+.menu__grid__section h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
   width: 40px;
-  border-bottom: 3px #99E2D0 solid;
+  height: 3px;
+  background-color: #99E2D0;
 }
 @media screen and (min-width: 768px) {
   .menu__grid__section {
@@ -717,7 +691,7 @@ footer i {
     border-radius: 1.4rem;
     box-shadow: #cfcfcf 0px 5px 10px;
     cursor: grab;
-    transition: 280ms 50ms;
+    transition: 280ms 30ms;
   }
   .menu__grid__section--1 {
     transform: perspective(200px) translateZ(-65px) translateX(55px);

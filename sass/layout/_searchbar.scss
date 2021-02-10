@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    background-color: lighten($color: $color-shadow, $amount: 11%);
+    background-color: map-get($greys, middle-grey);
     @include tablet {
         background-color: $color-popout;
         margin-bottom: 35px;
@@ -12,7 +12,7 @@
         display: flex;
         width : 200px ;
         @include tablet {
-            background-color: lighten($color: $color-shadow, $amount: 15%);
+            background-color: map-get($greys, light-grey);
             border: 1px $color-primary solid;
             border-radius: 25px;
         }
@@ -24,7 +24,6 @@
             }
             &:focus {
                 outline : none ;
-                -webkit-search-decoration : hidden ;
             }
         }
         i {

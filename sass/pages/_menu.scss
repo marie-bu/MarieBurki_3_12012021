@@ -15,7 +15,7 @@
     }
     &__main {
         align-items: center;
-        background-color: lighten($color: $color-shadow, $amount: 15%);
+        background-color: map-get($greys, light-grey);
         padding : 2.4rem 0.85rem 1.9rem 1rem ;
         margin-top : -45px ;
         border-radius: 3rem 3rem 0 0;
@@ -24,7 +24,6 @@
         }
         &__title {
             position: relative;
-            margin-bottom : -1rem ;
             margin-left: 0.5rem;
             padding-right: 3rem;
             i {
@@ -32,7 +31,7 @@
                 z-index: 1;
                 top : 0.2rem ; right : 1.5rem ;
                 font-size: 1.9rem;
-                transition: 300ms ease-in-out;
+                transition: $heart-dur+$animation-delay ease-in-out;
                 @include desktop {
                     right : 3rem
                 }
@@ -55,7 +54,7 @@
                 color: transparent;
                 transform : scale(0);
                 opacity: 0;
-                transition: 250ms 30ms ease-in-out;
+                transition: $heart-dur $animation-delay ease-in-out;
                 
             }
         }
@@ -63,22 +62,26 @@
     &__grid {
         @include tablet {
             display: grid;
-            grid-template-columns: repeat(auto-fill, 31%);
+            grid-template-columns: repeat(auto-fill, 29%);
             justify-content: space-around;
-            margin-top: 4.5rem; margin-bottom: 1.5rem;
-        }
-        &__title {
-            margin : 3rem 1rem 1rem 0.5rem ;
-            @include tablet {
-                margin-top: 1rem;
-            }
-            .part-border {
-                padding-top : 0.4rem;
-                width : 40px ;
-                border-bottom: 3px $color-tertiary solid;
-            }
+            margin-top: 4rem; margin-bottom: 1.5rem;
         }
         &__section {
+            h3 {
+                position: relative;
+                margin : 2.5rem 1.5rem 1.5rem 0.5rem;
+                @include tablet {
+                    margin-top : 1rem;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0; bottom: -0.4rem;
+                    width : 40px ;
+                    height: 3px;
+                    background-color: $color-tertiary;
+                }
+            }
             @include tablet {
                 display: flex ;
                 flex-direction: column;
@@ -88,7 +91,7 @@
                 border-radius: 1.4rem;
                 @include box-shadow ;
                 cursor: grab;
-                transition: 280ms 50ms;
+                transition: 280ms $animation-delay;
                 &--1 {
                     transform: perspective(200px) translateZ(-65px) translateX(55px);
                     &:hover {

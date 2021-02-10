@@ -48,7 +48,7 @@
                 z-index: 1;
                 top : 1.6rem ; right : 1.7rem ;
                 font-size: 1.5rem;
-                transition: 300ms ease-in-out;
+                transition: $heart-dur+$animation-delay ease-in-out;
                 &:hover {
                     opacity: 0;
                 }
@@ -68,7 +68,7 @@
                 color: transparent;
                 transform :scale(0);
                 opacity: 0;
-                transition: 250ms 30ms ease-in-out;
+                transition: $heart-dur $animation-delay ease-in-out;
             }
         }
     }

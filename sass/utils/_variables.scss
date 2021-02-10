@@ -6,4 +6,9 @@ $color-popout: #fff;
 $color-darkgrey: #353535;
 $color-shadow: #cfcfcf;
 
+$greys : (middle-grey:lighten($color: $color-shadow, $amount: 11%), light-grey:lighten($color: $color-shadow, $amount: 15%)) ;
+
+$load-size: 8rem;
+$load-icon-size: 3.2em;
+
 $breakpoints : (tablet:768px, screenXL:1025px) ;
