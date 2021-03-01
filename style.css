@@ -503,10 +503,7 @@ footer i {
   position: absolute;
   z-index: 0;
   display: inline-block;
-  background: linear-gradient(200deg, #9356DC 2%, #FF79DA);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #9356DC;
   transform: scale(0);
   opacity: 0;
   transition: 250ms 30ms ease-in-out;
@@ -646,10 +643,7 @@ footer i {
   position: absolute;
   z-index: 0;
   display: inline-block;
-  background: linear-gradient(200deg, #9356DC 2%, #FF79DA);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #9356DC;
   transform: scale(0);
   opacity: 0;
   transition: 250ms 30ms ease-in-out;

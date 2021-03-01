@@ -48,10 +48,7 @@
                 position: absolute;
                 z-index: 0;
                 display: inline-block;
-                background : linear-gradient(200deg, $color-primary 2%, $color-secondary);
-                -webkit-background-clip : text;
-                background-clip: text;
-                color: transparent;
+                color: $color-primary;
                 transform : scale(0);
                 opacity: 0;
                 transition: $heart-dur $animation-delay ease-in-out;
